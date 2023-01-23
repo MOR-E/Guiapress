@@ -10,4 +10,6 @@ router.get("/admin/articles/new", (res, req) => {
     res.send("Rota de categorias");
 });
 
+
+
 module.exports =  router;
