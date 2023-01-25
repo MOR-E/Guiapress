@@ -29,7 +29,7 @@ connection
     })
 
 app.use("/", categoriesConstroller);
-app.use("/articles", articlesController);    
+app.use("/", articlesController);    
 
 app.get("/", (req, res) => {
     res.render("index");

@@ -10,7 +10,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>id</th>
                 <th>Título</th>
                 <th>Slug</th>
                 <th>Ações</th>
@@ -23,8 +23,8 @@
                     <th><%=category.title%></th>  
                     <th><%=category.slug%></th>
                     <th>
-                        <button class="btn btn-warning" type ="submit">Editar</button>
-                        <form action="/categories/delete" method="post" style="display: inline;" onsubmit="ConfirmarDelecao(event,this)" type ="submit">
+                        <a href ="/admin/categories/edit/<%= category.id %>" class="btn btn-warning" type ="submit">Editar</a>
+                        <form action="/categories/delete" method="post" style="display: inline;" onsubmit="confirmarDelecao(event, this)" type ="submit">
                             <input type="hidden" name="id" value="<%- category.id%>">
                             <button class="btn btn-danger" type ="submit">Deletar</button>
                         </form>
@@ -40,7 +40,7 @@
 <%- include ('../../partials/footer.ejs'); %>
 
 <script>
-    document.querySelector('form').addEventListener('submit', confirmarDelecao)
+
     function confirmarDelecao(event, form) {
         event.preventDefault();
         var decision = confirm("Você quer excluir essa categoria?")
