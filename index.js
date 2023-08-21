@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 
 //Sessions
 app.use(session({
-    secret: "tester_running", cookie: {maxAge: 30000}
+    secret: "tester_running", cookie: {maxAge: 300000}
 }))
 
 //body-parser
@@ -95,6 +95,6 @@ app.get("/category/:slug", (req, res) => {
     })
 });
 
-app.listen(8080, () => {
+app.listen(8091, () => {
     console.log("servidor rodando");
 })
